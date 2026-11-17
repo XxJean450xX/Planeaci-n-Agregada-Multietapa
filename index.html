@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Planeación Agregada Multietapa · Multifuente</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <div class="header-top">
+          <div>
+            <span class="badge-model">Modelo de Optimización MILP</span>
+            <h1>Planeación agregada multietapa y multifuente con escasez</h1>
+            <p class="header-desc">
+              Configura los períodos, etapas en serie y máquinas disponibles. El
+              modelo optimiza producción, preparación, inventarios y escasez
+              compartiendo capacidad entre múltiples productos.
+            </p>
+          </div>
+        </div>
+        <nav>
+          <button data-t="dat" class="on">1. Configuración de Datos</button>
+          <button data-t="res">2. Resultados y Gráficas</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- PESTAÑA 1: DATOS -->
+      <section id="dat" class="on">
+        <div class="toolbar">
+          <div class="toolbar-group">
+            <button id="bEj">⚡ Cargar ejemplo del paper</button>
+            <button id="bEx">↓ Exportar (.json)</button>
+            <button id="bIm">↑ Importar (.json)</button>
+            <input type="file" id="fIm" accept=".json" hidden />
+          </div>
+          <div class="toolbar-group">
+            <span id="st" class="status-badge"></span>
+            <button id="bSol" class="pri">▶ Resolver Modelo</button>
+          </div>
+        </div>
+
+        <div id="cfg"></div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-wrap">
+              <span class="step-pill">Verificación</span>
+              <h3>Capacidades máximas calculadas (unidades)</h3>
+            </div>
+            <button id="bCap" class="sm">Calcular capacidades</button>
+          </div>
+          <div id="cap">
+            <p class="note" style="margin: 0">
+              Pulsa <b>Calcular capacidades</b> para visualizar cuántas unidades
+              máximas puede fabricar cada fuente por período antes de descontar
+              el uso de otros productos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PESTAÑA 2: RESULTADOS -->
+      <section id="res">
+        <div id="rc">
+          <div class="empty-state">
+            <h3>Aún no hay resultados generados</h3>
+            <p>
+              Completa los parámetros en la pestaña
+              <b>1. Configuración de Datos</b> (o carga el ejemplo) y haz clic
+              en <b>Resolver Modelo</b>.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script></script>
+  </body>
+</html>
