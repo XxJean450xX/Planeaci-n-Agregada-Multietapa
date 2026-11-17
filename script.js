@@ -982,11 +982,11 @@ const $ = (s) => document.querySelector(s);
             E(
               "div",
               { class: "toolbar-group" },
-              E("button", { onclick: csv }, "📊 Descargar tablas (.csv)"),
+              E("button", { onclick: csv }, "Descargar tablas (.csv)"),
               E(
                 "button",
                 { onclick: () => window.print() },
-                "🖨️ Imprimir / Guardar PDF",
+                "Imprimir / Guardar PDF",
               ),
             ),
           ),
